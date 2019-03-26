@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "schema.dtd">
+<dataset>
+    <ITEM NAME="a" COUNT="2" DATE="2019-01-04"/>
+    <ITEM NAME="a" COUNT="1" DATE="2019-01-03"/>
+    <ITEM NAME="c" COUNT="3" DATE="2019-01-01"/>
+    <ITEM NAME="d" COUNT="5" DATE="2019-01-05"/>
+    <ITEM NAME="e" COUNT="4" DATE="2019-01-05"/>
+</dataset>

@@ -1,6 +1,7 @@
 package com.example.springdatademo.domain;
 
 
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -35,7 +36,8 @@ public class A {
     private String name;
 
     @OneToMany(mappedBy = "a")
-    @Fetch(FetchMode.SUBSELECT)
+    @Fetch(FetchMode.JOIN)
+    @BatchSize(size = 2)
     private List<B> bs;
 
     public Long getId() {

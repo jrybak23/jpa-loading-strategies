@@ -3,10 +3,12 @@
 <dataset>
     <A ID="1" NAME="a1"/>
     <A ID="2" NAME="a2"/>
+    <A ID="3" NAME="a3"/>
 
     <B ID="1" NAME="b1" A_ID="1"/>
     <B ID="2" NAME="b2" A_ID="1"/>
     <B ID="3" NAME="b3" A_ID="2"/>
+    <B ID="4" NAME="b4" A_ID="3"/>
 
     <C ID="1" NAME="c1" B_ID="1"/>
     <C ID="2" NAME="c2" B_ID="1"/>

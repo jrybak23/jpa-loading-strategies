@@ -3,7 +3,7 @@ package com.example.springdatademo.repository;
 import com.example.springdatademo.BaseTest;
 import com.example.springdatademo.domain.A;
 import com.example.springdatademo.domain.B;
-import com.example.springdatademo.domain.C;
+import com.example.springdatademo.dto.ADTO;
 import com.github.database.rider.core.api.dataset.DataSet;
 import com.github.database.rider.spring.api.DBRider;
 import org.junit.Test;
@@ -34,12 +34,16 @@ public class ARepositoryTest extends BaseTest {
     @Transactional(readOnly = true)
     public void test() {
         List<A> result = adao.findAll();
-        List<C> list = result.stream()
+        /*List<C> list = result.stream()
                 .flatMap(a -> a.getBs().stream())
                 .flatMap(b -> b.getCs().stream())
+                .collect(toList());*/
+
+        List<B> bs = result.stream()
+                .flatMap(a -> a.getBs().stream())
                 .collect(toList());
 
-        System.out.println(list);
+        System.out.println(bs);
     }
 
     @Test
@@ -61,4 +65,11 @@ public class ARepositoryTest extends BaseTest {
         //System.out.println(cs);
     }
 
+    @Test
+    @DataSet("dataset2.xml")
+    @Transactional(readOnly = true)
+    public void testDTO() {
+        List<ADTO> result = adao.findAllDTO();
+        System.out.println(result);
+    }
 }
